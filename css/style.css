@@ -1,4 +1,32 @@
+*{
+    padding: 0px;
+}
+
+body, header, main, footer{
+    margin: 0.5rem;
+    min-height: 50px;
+    
+}
+
+header, main, footer{
+    padding: 60px, 0px;
+    width: 90%;
+    margin: auto;
+    max-width: 1000px;
+    overflow: hidden;
+}
+
 .header-logo{
 display: inline-block;
 width: auto;
 }
+
+main{
+    min-height: 200px;
+    background-color: aquamarine;
+}
+
+.secciones{
+    min-height: 50px;
+}
+
