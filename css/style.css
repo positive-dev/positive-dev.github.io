@@ -95,11 +95,6 @@ header-menu ul li a{
     text-align: center;
  }
 
- .marco-imagen{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
- }
 
  .porta-imagen{
      margin-bottom: 2em;
