@@ -3,6 +3,7 @@
     --color-base:gray;
     --color-secundario:aquamarine;
     --color-terciario:red;
+    --color-1:#A6FFF2;
   }
 
 html{
@@ -14,19 +15,19 @@ html{
     margin:0rem;
 }
 
-body{
-    background-color: var(--color-base);
+.body{
     font-size:16px;
 }
 
-header, main, footer{
+.container{
     width: 80%;
     margin: 0rem auto;
-    padding: 0.5rem 0.5rem;
+    background-color: var(--color-1);
 }
 
 header{
-    background-color: var(--color-principal);
+    background-color: var(--color-1);
+    padding: 0.5rem;
 }
 
 footer{
@@ -38,35 +39,40 @@ main{
     background-color: var(--color-secundario);
 }
 
-.secciones{
+section{
     min-height: 50px;
 }
 
 header-logo{
+    background-color: var(--color-1);
+    margin-right: 00.25rem;
+}
+
+nav{
     display: inline-block;
-    width: auto;
-    background-color: yellow;
+    background-color: black;
+    text-align: center;
 }
 
 header-menu{
-    display: inline-block;
-    width: auto;
-    background-color: blueviolet;
-    position: relative;
-    top:auto;
-    left:auto;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    
 }
 
 header-menu ul {
     list-style: none;
-    background-color:chartreuse;
-    
+    background-color:red;
+    vertical-align: middle;
 }
 
 header-menu ul li{
     display: inline-block;
     text-align: center;
-    background-color: burlywood;
+    background-color: orange;
+    margin: auto 0.25rem;
 }
 
 header-menu ul li a{
@@ -76,8 +82,6 @@ header-menu ul li a{
 #home-logo{
     width: 7rem;
 }
-
-
 
 .flex-container {
     display: flex;
@@ -117,15 +121,43 @@ header-menu ul li a{
     align-items: center;
     flex-direction: column;
 }
+.porta-texto-portada {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(1);
+    
+    background: linear-gradient(90deg, rgba(45,253,250,0.35) 0%,rgba(34,187,195,0) 100%);
+    transition: transform .75s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.porta-texto-portada>h2{
+    font-size: 3rem;
+    background: linear-gradient(90deg, rgba(3, 56, 56, 0.521) 0%, rgba(45,253,250,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;      
+}
 
 .porta-imagen:hover .porta-texto{
     transform: scale(1);
 }
 
 .imagen{
-    max-width: 25rem; /*15rem*/
+    width: 100%; 
     aspect-ratio: 4/3;
     object-fit: cover;
+    /*min-width: 25rem;15rem;5rem*/
+    display: block;
+}
 
+.imagen-amplia{
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
     display: block;
 }
