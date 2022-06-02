@@ -1,13 +1,17 @@
 :root {
     --color-principal: blue;
-    --color-base:gray;
+    --color-base:white;
     --color-secundario:aquamarine;
     --color-terciario:red;
     --color-1:#A6FFF2;
+    --color-2:#2B2E4A;
+    --color-3:#e84545;
+    --color-opaco-1:rgba(168, 255, 242,0.8);
   }
 
 html{
     font-family: 'Open Sans', sans-serif;
+    font-size:16px;
 }
 
 *{
@@ -15,14 +19,11 @@ html{
     margin:0rem;
 }
 
-.body{
-    font-size:16px;
-}
-
 .container{
     width: 80%;
     margin: 0rem auto;
-    background-color: var(--color-1);
+    background-color: var(--color-base);
+    padding: 0rem 0.25rem;
 }
 
 header{
@@ -30,13 +31,11 @@ header{
     padding: 0.5rem;
 }
 
-footer{
-    background-color: var(--color-terciario);
-}
+
 
 main{
     min-height: 200px;
-    background-color: var(--color-secundario);
+    background-color: var(--color-base);
 }
 
 section{
@@ -45,7 +44,7 @@ section{
 
 header-logo{
     background-color: var(--color-1);
-    margin-right: 00.25rem;
+    margin-right: 0.5rem;
 }
 
 nav{
@@ -54,8 +53,12 @@ nav{
     text-align: center;
 }
 
+hidden-menu{
+    display: none;
+}
+
 header-menu{
-    background-color: chocolate;
+    background-color: var(--color-1);
     display: flex;
     align-items: center;
     justify-content:left;
@@ -64,49 +67,61 @@ header-menu{
 
 header-menu ul {
     list-style: none;
-    background-color:red;
+    background-color:var(--color-1);
     vertical-align: middle;
 }
 
 header-menu ul li{
     display: inline-block;
     text-align: center;
-    background-color: orange;
+    background-color: var(--color-1);
     margin: auto 0.25rem;
 }
 
 header-menu ul li a{
     text-decoration: none;
+    color: var(--color-2);
 }
 
-#home-logo{
+.home-logo{
     width: 7rem;
 }
 
 .flex-container {
     display: flex;
-    background-color: grey;
+    background-color: var(--color-base);
 }
 
 .flex-container-reverse {
     display: flex;
-    background-color: grey;
+    background-color:inherit;
     flex-direction: row-reverse;
 }
 
 .flex-item {
-    background-color: white;
+    background-color:inherit;
     text-align: center;
+    margin: auto 0rem;
+ }
+
+ .flex-item p{
+    margin: 0rem 0.5rem;
  }
 
 
  .porta-imagen{
-     margin-bottom: 2em;
      position: relative;
      overflow:hidden;
      cursor: pointer;
-     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5)
+     border-radius: 2rem;
  }
+
+ .porta-imagen-portada{
+    position: relative;
+    overflow:hidden;
+    cursor: pointer;
+    border-radius: 0 0 1rem 1rem;
+}
 
 .porta-texto {
     position: absolute;
@@ -114,12 +129,13 @@ header-menu ul li a{
     height: 100%;
     top: 0;
     transform: scale(0);
-    background: hsla(273, 91%, 27%, 0.7);
+    background: hsla(184, 49%, 55%, 0.295);
     transition: transform .75s;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 2rem;
 }
 .porta-texto-portada {
     position: absolute;
@@ -127,7 +143,6 @@ header-menu ul li a{
     height: 100%;
     top: 0;
     transform: scale(1);
-    
     background: linear-gradient(90deg, rgba(45,253,250,0.35) 0%,rgba(34,187,195,0) 100%);
     transition: transform .75s;
     display: flex;
@@ -143,12 +158,17 @@ header-menu ul li a{
     -webkit-text-fill-color: transparent;      
 }
 
+.porta-texto>h2{
+    font-size: 1.5rem;
+    color: var(--color-base);
+}
+
 .porta-imagen:hover .porta-texto{
     transform: scale(1);
 }
 
 .imagen{
-    width: 100%; 
+    width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
     /*min-width: 25rem;15rem;5rem*/
@@ -161,3 +181,302 @@ header-menu ul li a{
     object-fit: cover;
     display: block;
 }
+
+.contenedor{
+    display: flex;
+    align-items: center; /*Alineacion Horizontal - left| center |right*/
+    justify-content:center;/*Alineacion Vertical - left| center |right*/
+    flex-direction: row;
+}
+
+.contenido{
+    text-align: center;
+}
+
+.form-container{
+    flex-direction: column;
+    display: flex;
+    padding-top: 0.5rem;
+}
+
+.form-item{
+    flex-grow: 1;
+}
+
+article{
+    margin-bottom: 2rem;
+}
+
+input[type=text]{
+    border-radius: 0.5rem;
+    width: 79%;
+}
+
+input[type=email]{
+    border-radius: 0.5rem;
+    width: 79%;
+}
+
+footer{
+    background-color: var(--color-3);
+    min-height: 1rem;
+    padding-top: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    padding-bottom: 00.5rem;
+}
+
+footer p{
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+footer h6{
+    font-size: 0.85rem;
+}
+
+.flex-container-footer{
+    display: flex;
+    background-color: var(--color-3);
+    flex-direction: row;
+}
+
+.flex-item-footer {
+    background-color:inherit;
+    text-align: center;
+    flex: auto ;
+ }
+
+ /*sobre Menu Barras(Hamburguesa)*/
+.bar-btn{
+    font-size: 2rem;
+    color: var(--color-2);
+    cursor: pointer;
+    margin: 0.25rem;
+}
+
+.nav-menu{
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    top: 10rem;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.hidden-logo{
+    margin: 0.25rem;
+    
+}
+
+.nav-menu li{
+    display: none;
+    margin: 1rem auto;
+    background-color: var(--color-2);
+    border-radius: 0.25rem;
+}
+.nav-menu li a{
+    color: var(--color-3);
+    font-weight: 600;
+    padding: 0.10rem 0.40rem;
+}
+
+#check-home{
+    display: none;
+}
+
+#check-home:checked ~ .nav-menu{
+    height: auto;
+}
+
+#check-home:checked ~ .nav-menu li{
+    display: block;
+}
+
+hidden-menu{
+    display: none;
+    align-items: center; /*Alineacion Horizontal - left| center |right*/
+    justify-content:center;/*Alineacion Vertical - left| center |right*/
+    flex-direction: row;
+}
+
+nav ul li a{
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    transition: all 0.75s;
+}
+
+nav ul li a:hover{
+    color: var(--color-3);
+    background-color:var(--color-2);
+    transition: all 0.75s;
+}
+
+.texto{
+    text-align:justify;
+    background-color: var(--color-opaco-1);
+    filter: alpha(opacity=50);
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 100%;
+}
+
+.iconos{
+    padding-right: 0.25rem;
+}
+
+form {
+    display: flex;
+  }
+
+  input {
+    flex-grow: 1;
+    border-color: var(--color-1);
+  }
+
+  input, button {
+    font: inherit;
+    border: 0;
+  }
+
+  button {
+    padding: 0.5em 0.75em;
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border-radius: 1rem;
+    transition: all 0.75s;
+    border-color: var(--color-2);
+    border: 0.15rem solid var(--color-2);
+  }
+
+  button:hover {
+    padding: 0.5em 0.75em;
+    background-color: var(--color-2);
+    color: var(--color-3);
+    border-radius: 1rem;
+    transition: all 0.75s;
+  }
+
+    .leyenda-newsletter{
+      margin: 0.5rem;
+      color: var(--color-2);
+  }
+
+ /* Resonsive segun Pantalla  */
+
+ @media only screen and (min-width: 981px) {
+
+    html{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 980px) and (min-width: 800px) {
+
+    html{
+        font-size: 14px;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 799px) and (min-width: 650px) {
+
+    html{
+        font-size: 12px;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    iframe{
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 649px) and (min-width: 500px) {
+
+    html{
+        font-size: 10px;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .home-logo{
+        width: 8rem;
+    }
+
+    iframe{
+        width: 430px;
+        margin: 0rem auto;
+    }
+
+}
+
+@media only screen and (max-width: 499px) and (min-width: 250px) {
+
+    html{
+        font-size: 10px;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .porta-texto{
+        display: none;
+    }
+
+    .porta-parrafo{
+        float: left;
+        position: absolute;
+        opacity: 0.7;
+        top: auto;
+        border-radius: 2rem;
+        background-color: var(--color-base);
+    }
+
+    .marco{
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav{
+        display: none;
+    }
+
+    header-logo{
+        display: none;
+    }
+
+    .home-logo{
+        width: 9rem;
+    }
+
+    hidden-menu{
+        display: flex;
+    }
+
+    .texto-mapa{
+        display: none;
+    }
+
+    iframe{
+        width: 250px;
+        height: 250px;
+    }
+
+}
+
+/* box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5) */
